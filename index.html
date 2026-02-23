@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Explore electronics components, DIY projects, circuits, and tech ideas on Xpert Techy.">
+
+<title>Xpert Techy - DIY Electronics & Tech Projects</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+/* BODY */
+body{
+    background: linear-gradient(135deg, #1a1a1a, #333333);
+    background-image: repeating-radial-gradient(circle at 50% 50%, rgba(255,255,255,0.02), rgba(255,255,255,0.02) 1px, transparent 1px, transparent 100px);
+    backdrop-filter: blur(8px);
+    transition:0.3s;
+    color:white;
+    overflow-x:hidden;
+}
+
+.dark-mode{
+    background:#111;
+    color:white;
+}
+/* Navbar Background */
+
+.custom-navbar{
+
+background: linear-gradient(90deg,#ff1a1a,#0044ff);
+
+padding:12px;
+
+box-shadow:0px 3px 8px rgba(0,0,0,0.3);
+
+}
+
+
+/* Logo */
+
+.logo{
+
+width:55px;
+
+height:55px;
+
+border-radius:50%;
+
+border:3px solid white;
+
+margin-right:10px;
+
+}
+
+
+/* Channel Name */
+
+.brand-name{
+
+color:white;
+
+font-size:26px;
+
+font-weight:bold;
+
+text-decoration:none;
+
+font-family:Arial;
+
+}
+
+.brand-name:hover{
+
+color:#ffffcc;
+
+}
+
+
+/* Menu Button */
+
+.menu-btn{
+
+background:white;
+
+border:none;
+
+font-size:22px;
+
+padding:6px 14px;
+
+border-radius:8px;
+
+}
+
+
+/* Mobile */
+
+@media(max-width:600px){
+
+.logo{
+
+width:45px;
+
+height:45px;
+
+}
+
+.brand-name{
+
+font-size:22px;
+
+}
+
+}
+
+/* NAVBAR */
+.navbar{
+    background:linear-gradient(90deg,red,blue);
+    padding: 1.2%;
+    font-family:'Trebuchet MS', 'Lucida  Sans Unicode','Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.logo{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    margin-right:10px;
+}
+
+/* LINKS */
+a {
+    text-decoration: none !important;
+    color: inherit;
+}
+a:hover, a:active, a:visited {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+/* MAIN SECTION */
+.main-section{
+    display:flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+/* BIG CAROUSEL */
+.carousel-side{
+    width:70%;
+    border-radius:10px;
+    overflow:hidden;
+    padding:5px;
+    background:transparent;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.carousel img{
+    width:100%;
+    height:600px;
+    object-fit: cover;
+    border-radius:5px;
+}
+
+/* BIG CAROUSEL INDICATOR BAR */
+.carousel-side .carousel-indicators{
+    position: absolute;
+    bottom: 10px;
+    left: 37%;
+    transform: translateX(-50%);
+    display: flex;
+    width: auto;
+    height: 6px;
+    border-radius: 3px;
+    background: none; 
+    padding: 0 2px;
+    z-index:10;
+}
+.carousel-side .carousel-indicators button{
+    flex: 1;
+    margin: 0 2px;
+    height: 6px;
+    background-color: rgba(255,255,255,0.5);
+    border:none;
+    border-radius:3px;
+    transition:0.3s;
+}
+.carousel-side .carousel-indicators .active{
+    background-color: white;
+}
+
+/* DESKTOP CARD SLIDER */
+.card-side{
+    width:30%;
+    height:600px;
+    overflow:hidden;
+    position:relative;
+    box-sizing: border-box;
+}
+
+.card-slider{
+    height:600px;
+    overflow-y:scroll;
+    scroll-behavior:smooth;
+}
+.card-slider::-webkit-scrollbar{
+    display:none;
+}
+.card-slider{
+    -ms-overflow-style:none;
+    scrollbar-width:none;
+}
+
+/* VCARD STYLES */
+.vcard{
+    height:293px;
+    margin:5px;
+    background-size:cover;
+    background-position:center;
+    border-radius:20px;
+    padding:15px;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    box-shadow:0 4px 10px rgba(0,0,0,0.5);
+}
+.vcard h4, .vcard p{
+    text-shadow:1px 1px 3px rgba(0,0,0,0.7);
+}
+
+/* SOCIAL CARDS */
+.social-card img{
+    height:200px;
+    object-fit:cover;
+}
+
+/* FOOTER */
+footer{
+    background:linear-gradient(90deg,red,blue);
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+}
+
+/* MOBILE ADJUSTMENTS */
+@media(max-width:768px){
+    .main-section{
+        display:block;
+    }
+    .carousel-side{
+        width:100%;
+    }
+    .card-side{
+        display:none;
+    }
+} 
+
+@media(max-width:768px){
+  .carousel-side img {
+    object-fit: contain;
+    height: auto;
+    max-height: 400px; /* adjust as needed */
+    width: 100%;
+  }
+}
+
+
+/* PROFILE IMAGE */
+.profile-img{
+    width:80px;
+    border-radius:50%;
+}
+
+/* 3-dot button */
+.btn-light{
+    border-radius:50%;
+    width:40px;
+    height:40px;
+    font-size:24px;
+    font-weight:bold;
+    background: rgba(255,255,255,0.8);
+    color:#111;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:0.3s;
+}
+.btn-light:hover{
+    background:#fff;
+    color:#222;
+}
+
+/* SMALL CARD CAROUSEL (mobile 4 cards) */
+.small-card-carousel{
+    margin-top:20px;
+}
+.small-card-carousel .carousel-item{
+    width: 100%;
+}
+.small-card-carousel .vcard{
+    height:250px;
+    width:80%;  /* bigger, ~4:3 ratio */
+    min-width:450px;
+    margin:auto;
+}
+
+/* CENTER INDICATORS FOR MOBILE SMALL CAROUSEL */
+.small-card-carousel .carousel-indicators{
+    bottom:-45px; /* below carousel */
+    left: 36%;
+    transform: translateX(-50%);
+    width: auto;
+    display:flex;
+    gap:5px;
+    z-index:10;
+}
+.small-card-carousel .carousel-indicators button{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background-color: rgba(25, 0, 255, 0.5);
+}
+.small-card-carousel .carousel-indicators .active{
+    background-color:rgb(255, 0, 0);
+}
+
+/* DESKTOP CARD INDICATOR */
+
+/* INTERACTIVE DESKTOP CARD INDICATOR */
+.side-scroll {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 1000;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: gray;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: white;
+  transform: scale(1.5);
+}
+
+
+.card-slider{
+
+height:600px;
+
+overflow-y:auto;
+
+scroll-behavior:smooth;
+
+}
+
+/* DOTS */
+/* SIDE DOT INDICATOR */
+
+.side-scroll{
+position:absolute;
+right:18px;
+top:50%;
+transform:translateY(-50%);
+display:flex;
+flex-direction:column;
+gap:8px;
+z-index:5;
+}
+
+.dot{
+
+width:8px;
+height:8px;
+
+background:#888;
+
+border-radius:50%;
+
+cursor:pointer;
+
+transition:0.3s;
+
+}
+
+.dot.active{
+
+background:white;
+
+transform:scale(1.3);
+
+}
+
+.playlist{max-height: fit-content;border-radius: 20px; width: 80%; margin-left: 45px;
+}
+ 
+.drive-area{
+    width:100%;
+    min-height:500px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,#111,#1b1b1b);
+    padding:60px 20px;
+}
+
+
+.drive-container{
+    text-align:center;
+    max-width:900px;
+    width:100%;
+}
+
+
+.drive-container h1{
+    color:white;
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+
+.drive-container p{
+    color:#ccc;
+    margin-bottom:30px;
+    font-size:16px;
+}
+
+
+.drive-card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(12px);
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0px 10px 30px rgba(0,0,0,0.4);
+}
+
+
+.drive-icon{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+
+.drive-card h3{
+    color:white;
+    margin-bottom:10px;
+}
+.menu-btn{
+
+background: rgba(255,255,255,0.15);
+
+border: 1px solid rgba(255,255,255,0.5);
+
+color:white;
+
+font-size:22px;
+
+padding:6px 14px;
+
+border-radius:10px;
+
+backdrop-filter: blur(5px);
+
+transition:0.3s;
+
+}
+
+/* Hover Effect */
+
+.menu-btn:hover{
+
+background: rgba(255,255,255,0.3);
+
+}
+
+
+.drive-button{
+
+    display:inline-block;
+    margin-top:20px;
+    padding:14px 35px;
+
+    background:#ff4d4d;
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:30px;
+
+    font-weight:bold;
+
+    transition:0.3s;
+}
+
+
+.drive-button:hover{
+
+    background:#ff2020;
+
+    transform:scale(1.05);
+
+} 
+.insta-btn{
+
+background:linear-gradient(45deg,#ff0055,#ff8800);
+
+color:white;
+
+padding:6px 14px;
+
+border-radius:20px;
+
+text-decoration:none;
+
+font-size:14px;
+
+margin-right:10px;
+
+font-weight:bold;
+
+}
+
+.insta-btn:hover{
+
+color:white;
+
+opacity:0.9;
+
+}
+
+</style>
+</head>
+
+<body>
+<!-- NAVBAR -->
+<nav class="navbar navbar-dark custom-navbar">
+
+<div class="container-fluid">
+
+<div class="d-flex align-items-center">
+
+<img src="https://i.ibb.co/B2SLChC5/1000290451.png"
+alt="logo"
+class="logo">
+
+<span class="navbar-brand">
+<a href="index.html" class="brand-name">
+XpertTechy
+</a>
+</span>
+
+</div>
+
+<div class="d-flex align-items-center">
+
+<!-- Instagram DM Button -->
+
+<a href="https://instagram.com/xperttechy"
+target="_blank"
+class="insta-btn">
+
+DM Me
+
+</a>
+
+<button class="menu-btn"
+data-bs-toggle="offcanvas"
+data-bs-target="#menu">
+
+☰
+
+</button>
+
+</div>
+
+</div>
+
+</nav>
+
+
+<!-- MOBILE MENU -->
+<div class="offcanvas offcanvas-end" id="menu">
+<div class="offcanvas-header">
+<h4>Profile</h4>
+<button class="btn-close" data-bs-dismiss="offcanvas"></button>
+</div>
+<div class="offcanvas-body text-center">
+<img src="https://i.ibb.co/Mk2Y6P2B/1000290044.png" alt="profile" class="profile-img">
+<p>XPERT TECHY</p>
+<hr>
+
+<button class="btn btn-outline-dark w-100" data-bs-toggle="collapse" data-bs-target="#about">About Us</button>
+<div id="about" class="collapse mt-2">
+I'm an electronics and a diy enthusiast building DIY projects and circuits using simple electronics and other materials with modified idea.
+ DM me or comment on my social media videos for new content definetly try one and post it. <br> Build learn and improve - Xperttechy
+</div>
+
+<br>
+
+<button class="btn btn-outline-dark w-100" data-bs-toggle="collapse" data-bs-target="#contact">Contact Us</button>
+<div id="contact" class="collapse mt-2">
+Email: xperttechy5@email.com
+</div>
+
+<hr>
+
+<div class="form-check form-switch">
+<input class="form-check-input" type="checkbox" onclick="darkMode()">
+<label>Dark Mode</label>
+</div>
+</div>
+</div>
+
+<!-- MAIN SECTION -->
+<div class="main-section">
+
+<!-- BIG CAROUSEL -->
+<div class="carousel-side">
+<div id="slide" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <a href="#"><img src="https://i.ibb.co/HfLHqXFK/Welcome-to-Xpert-Techy.png" alt="Welcome"></a>
+    </div>
+    <div class="carousel-item">
+      <a href="#"><img src="https://i.ibb.co/Qv6ny0qR/car-2.png" alt="car 2"></a>
+    </div>
+    <div class="carousel-item">
+      <a href="#"><img src="https://i.ibb.co/v6m8hJLG/carousal-last-page.png" alt="carousal last"></a>
+    </div>
+  </div>
+
+  <!-- Indicator bar centered relative to carousel width -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#slide" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#slide" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#slide" data-bs-slide-to="2"></button>
+  </div>
+</div>
+</div>
+
+<!-- DESKTOP SIDE CARDS -->
+<div class="card-side">
+
+<div class="card-slider" id="autoscrollcards">
+
+<a href="https://youtube.com/playlist?list=PLU4m1FiIOkTkSd7vV4aifAIKvVpO4QNn-&si=D-CDnjw2h7hY2CCt">
+<div class="vcard" style="background-image:url('https://i.ibb.co/LGKGfSy/tec.png');">
+
+<h4>Tech</h4>
+<p>Electronics tutorials</p>
+</div></a>
+
+<a href="https://youtube.com/playlist?list=PLU4m1FiIOkTkGapozanDxwQiEVi6LrTOD&si=ngP6T7n48IQFgVKH"><div class="vcard" style="background-image:url('https://i.ibb.co/1GWkbF3H/comp.png');">
+<h4>Components</h4>
+<p>Learn electronics parts</p>
+</div></a>
+
+<a href="https://youtube.com/playlist?list=PLU4m1FiIOkTm80HegF5ww6qfIhuvG9WK8&si=ywFFU70qXgPnHZOF"><div class="vcard" style="background-image:url('https://i.ibb.co/fYDRjWpR/diy.png');">
+<h4>DIY</h4>
+<p>Projects and builds</p>
+</div></a>
+
+<a href="https://youtube.com/playlist?list=PLU4m1FiIOkTleI3KbisoZlfXHkd5sd6j3&si=HoPXNVupMt1E2iUb"><div class="vcard" style="background-image:url('https://i.ibb.co/0y01NFmN/lh.png');">
+<h4>Life Hacks</h4>
+<p>Useful ideas</p>
+</div></a>
+
+</div>
+
+
+<div class="side-scroll">
+
+<span class="dot active" onclick="goToCard(0)"></span>
+<span class="dot" onclick="goToCard(1)"></span>
+<span class="dot" onclick="goToCard(2)"></span>
+
+</div>
+
+</div>
+
+
+</div>
+
+<!-- MOBILE SMALL CAROUSEL FOR 4 CARDS -->
+<div class="small-card-carousel d-md-none mt-4">
+<div id="mobileCardCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="d-flex justify-content-center">
+        <a href="https://youtube.com/playlist?list=PLU4m1FiIOkTkSd7vV4aifAIKvVpO4QNn-&si=D-CDnjw2h7hY2CCt">
+          <div class="vcard" style="background-image:url('https://i.ibb.co/LGKGfSy/tec.png');"> 
+            <iframe width="100%" class="playlist" height="400"
+src="https://www.youtube.com/embed/videoseries?list=PLU4m1FiIOkTkSd7vV4aifAIKvVpO4QNn-"
+frameborder="0"
+allowfullscreen>
+</iframe>
+
+            <h4>Tech</h4>
+            <p>Electronics tutorials</p>
+        </div></a>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="d-flex justify-content-center">
+        <a href="https://youtube.com/playlist?list=PLU4m1FiIOkTkGapozanDxwQiEVi6LrTOD&si=ngP6T7n48IQFgVKH">
+          <div class="vcard" style="background-image:url('https://i.ibb.co/1GWkbF3H/comp.png');">
+            <iframe width="100%" height="400" class="playlist"
+src="https://www.youtube.com/embed/videoseries?list=PLU4m1FiIOkTkGapozanDxwQiEVi6LrTOD"
+frameborder="0"
+allowfullscreen>
+</iframe>
+
+            <h4>Components</h4>
+            <p>Learn electronics parts</p>
+        </div></a>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="d-flex justify-content-center">
+        <a href="https://youtube.com/playlist?list=PLU4m1FiIOkTm80HegF5ww6qfIhuvG9WK8&si=ywFFU70qXgPnHZOF">
+          <div class="vcard" style="background-image:url('https://i.ibb.co/fYDRjWpR/diy.png');">
+            <iframe width="100%" height="400" class="playlist"
+src="https://www.youtube.com/embed/videoseries?list=PLU4m1FiIOkTm80HegF5ww6qfIhuvG9WK8"
+frameborder="0"
+allowfullscreen>
+</iframe>
+
+            <h4>DIY</h4>
+            <p>Projects and builds</p>
+        </div></a>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="d-flex justify-content-center">
+        <a href="https://youtube.com/playlist?list=PLU4m1FiIOkTleI3KbisoZlfXHkd5sd6j3&si=HoPXNVupMt1E2iUb">
+          <div class="vcard" style="background-image:url('https://i.ibb.co/0y01NFmN/lh.png');">
+            <iframe width="100%" class="playlist" height="400"
+src="https://www.youtube.com/embed/videoseries?list=PLU4m1FiIOkTleI3KbisoZlfXHkd5sd6j3"
+frameborder="0"
+allowfullscreen>
+</iframe>
+
+            <h4>Life Hacks</h4>
+            <p>Useful ideas</p>
+        </div></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- INDICATORS BELOW CARDS -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#mobileCardCarousel" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#mobileCardCarousel" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#mobileCardCarousel" data-bs-slide-to="2"></button>
+    <button type="button" data-bs-target="#mobileCardCarousel" data-bs-slide-to="3"></button>
+  </div>
+</div>
+</div>
+
+<!-- SOCIAL CARDS -->
+<div class="container mt-5">
+<div class="row">
+
+<div class="col-md-4">
+<a href="https://youtube.com/@xpert_techy?si=ZR3M2zKw35sZqlwq"><div class="card social-card">
+<img src="https://i.ibb.co/1fjf87Bp/card-yt.png" alt="card yt">
+<div class="card-body">
+<h4>YouTube</h4>
+<p>Watch tutorials</p>
+</div>
+</div></a>
+</div>
+
+<div class="col-md-4">
+<a href="https://www.facebook.com/Xperttechy2.0"><div class="card social-card">
+<img src="https://i.ibb.co/q3ZJfpvg/fb.png" alt="fb">
+<div class="card-body">
+<h4>Facebook</h4>
+<p>Follow updates</p>
+</div>
+</div></a>
+</div>
+
+<div class="col-md-4">
+<a href="https://www.instagram.com/xperttechy?igsh=Z2htNDRjamgyMHJ2"><div class="card social-card">
+<img src="https://i.ibb.co/rCJcZxW/insta.png" alt="insta">
+<div class="card-body">
+<h4>Instagram</h4>
+<p>Project photos</p>
+</div>
+</div></a>
+</div>
+
+</div>
+</div>
+ <section class="drive-area">
+
+  <div class="drive-container">
+
+    <h1>XpertTechy</h1>
+
+    <p>
+      Browse and download my latest project circuit diagram, tutorials and resources.
+    </p>
+
+    <div class="drive-card">
+
+      <div class="drive-icon">
+        📁
+      </div>
+
+      <h3>Google Drive Collection</h3>
+
+      <p>
+        Click below to open the full image collection.
+      </p>
+
+      <a href="https://drive.google.com/drive/folders/1aB79NTOf-cmVDhJlUduJzj52eL3QOdTM"
+         target="_blank"
+         class="drive-button">
+         Open Drive Folder
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- FOOTER -->
+ <footer>
+
+<div>© 2026 XpertTechy</div>
+
+<br>
+
+<div>
+
+<a href="#" onclick="openMenu('about')">About Us</a>  &nbsp;  |   &nbsp;  
+<a href="#" onclick="openMenu('contact')">Contact Us</a>   &nbsp;  |   &nbsp;  
+<a href="https://youtube.com/@xpert_techy?si=ZR3M2zKw35sZqlwq">Subscribe Us</a>
+
+</div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+</script>
+<script> 
+
+
+function openMenu(section){
+
+// Open side menu
+
+var offcanvas = new bootstrap.Offcanvas(
+document.getElementById('menu')
+);
+
+offcanvas.show();
+
+
+// Wait then open section
+
+setTimeout(function(){
+
+var target = document.getElementById(section);
+
+var collapse = new bootstrap.Collapse(target, {
+toggle:true
+});
+
+},400);
+
+}
+
+
+function darkMode(){
+document.body.classList.toggle("dark-mode");
+}
+ 
+/* CLICK INDICATOR SCROLL */
+
+function scrollToCard(index){
+
+const slider = document.getElementById("autoScrollCards");
+
+const cardHeight = 303; // vcard height + margin
+
+slider.scrollTo({
+
+top: index * cardHeight,
+
+behavior:"smooth"
+
+});
+
+}
+
+
+const slider = document.getElementById("autoscrollcards");
+const dots = document.querySelectorAll(".dot");
+
+function goToCard(index){
+
+const cardHeight = 300;
+
+slider.scrollTo({
+
+top:index * cardHeight,
+behavior:"smooth"
+
+});
+
+}
+
+
+/* ACTIVE DOT UPDATE */
+
+slider.addEventListener("scroll",()=>{
+
+const cardHeight = 300;
+
+let index = Math.round(slider.scrollTop/cardHeight);
+
+dots.forEach(d=>d.classList.remove("active"));
+
+if(dots[index]){
+
+dots[index].classList.add("active");
+
+}
+
+});
+
+
+
+</script>
+
+
+</body>
+</html>
